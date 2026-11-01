@@ -34,29 +34,9 @@ export const loadResults = () => {
           total_marks_100: toNumber(row.total_marks_100),
         }));
 
-        // Keep only students from study years 1 to 4.
-        const validYearData = cleanedData.filter(
-          (row) =>
-            Number.isInteger(row.study_year) &&
-            row.study_year >= 1 &&
-            row.study_year <= 4
-        );
+        console.log("CSV records loaded:", cleanedData.length);
 
-        // Identify courses where at least one student has an exam mark.
-        // Zero is a valid exam mark; null means no recorded exam mark.
-        const coursesWithExamParticipation = new Set(
-          validYearData
-            .filter((row) => row.exam_marks_75 !== null)
-            .map((row) => row.course_name)
-            .filter(Boolean)
-        );
-
-        // Retain all records belonging to courses with exam participation.
-        const finalData = validYearData.filter((row) =>
-          coursesWithExamParticipation.has(row.course_name)
-        );
-
-        resolve(finalData);
+        resolve(cleanedData);
       },
 
       error: (error) => reject(error),
