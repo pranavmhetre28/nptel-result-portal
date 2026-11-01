@@ -1,0 +1,245 @@
+
+/* =================================
+   ANALYTICS PAGE
+================================= */
+
+.analytics-page {
+  padding: 35px 0 60px;
+}
+
+.analytics-heading {
+  margin-bottom: 28px;
+}
+
+.analytics-heading h1 {
+  font-size: 30px;
+  letter-spacing: -0.8px;
+  color: #0f172a;
+  margin: 10px 0;
+}
+
+.analytics-heading p,
+.chart-card > p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.analytics-label {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =================================
+   FILTERS
+================================= */
+
+.analytics-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr)) auto;
+  gap: 13px;
+  align-items: end;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  padding: 18px;
+  margin: 24px 0 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.filter-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.filter-group select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 11px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  border-color: #2563eb;
+}
+
+.reset-filter-btn {
+  padding: 10px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.reset-filter-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.filter-summary {
+  color: #64748b;
+  font-size: 12px;
+  margin: 14px 0 20px;
+}
+
+.filter-summary strong {
+  color: #0f172a;
+}
+
+/* =================================
+   ANALYTICS STATISTICS
+================================= */
+
+.analytics-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.analytics-stat {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 19px;
+  transition: border-color 0.2s;
+}
+
+.analytics-stat:hover {
+  border-color: #cbd5e1;
+}
+
+.analytics-stat .analytics-label {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.analytics-stat h2 {
+  font-size: 26px;
+  color: #0f172a;
+  margin: 10px 0 0;
+  letter-spacing: -0.5px;
+}
+
+.analytics-stat p {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* =================================
+   CHARTS
+================================= */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  padding: 21px;
+  min-width: 0;
+}
+
+.chart-card h3 {
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.chart-card > p {
+  margin-bottom: 20px;
+}
+
+.no-chart-data {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 950px) {
+  .analytics-filters {
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
+  }
+
+  .reset-filter-btn {
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .analytics-page {
+    padding-top: 25px;
+  }
+
+  .analytics-heading h1 {
+    font-size: 26px;
+  }
+
+  .analytics-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .analytics-stat {
+    padding: 15px;
+  }
+
+  .analytics-stat h2 {
+    font-size: 22px;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .analytics-filters {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .reset-filter-btn {
+    width: 100%;
+  }
+}

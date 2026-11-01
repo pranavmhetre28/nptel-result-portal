@@ -1,0 +1,306 @@
+
+/* =================================
+   LEADERBOARD PAGE
+================================= */
+
+.leaderboard-page {
+  padding: 35px 0 60px;
+}
+
+.leaderboard-heading {
+  margin-bottom: 28px;
+}
+
+.leaderboard-heading h1 {
+  font-size: 30px;
+  letter-spacing: -0.8px;
+  color: #0f172a;
+  margin: 10px 0;
+}
+
+.leaderboard-heading p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.leaderboard-label {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =================================
+   TABS
+================================= */
+
+.leaderboard-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.leaderboard-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  border-radius: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.leaderboard-tabs button:hover {
+  background: #f8fafc;
+  color: #334155;
+}
+
+.leaderboard-tabs button.selected {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+/* =================================
+   COURSE SELECTOR
+================================= */
+
+.course-selector {
+  margin-bottom: 22px;
+}
+
+.course-selector label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.course-selector select {
+  width: 100%;
+  max-width: 500px;
+  padding: 11px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.course-selector select:focus {
+  border-color: #2563eb;
+}
+
+/* =================================
+   LEADERBOARD CARD
+================================= */
+
+.leaderboard-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  padding: 23px;
+}
+
+.leaderboard-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.leaderboard-card-heading h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #0f172a;
+}
+
+.leaderboard-card-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =================================
+   RANKING ROWS
+================================= */
+
+.ranking-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ranking-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  border: 1px solid #f1f5f9;
+  border-radius: 9px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.ranking-row:hover {
+  background: #fafcff;
+  border-color: #e2e8f0;
+}
+
+.ranking-position {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gold-icon {
+  color: #d69e20;
+}
+
+.silver-icon {
+  color: #8994a5;
+}
+
+.bronze-icon {
+  color: #b7794b;
+}
+
+.rank-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.ranking-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.ranking-student {
+  flex: 1;
+  min-width: 0;
+}
+
+.ranking-student h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.ranking-student p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+.ranking-student span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #2563eb;
+}
+
+.ranking-marks {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ranking-marks strong {
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.ranking-marks span {
+  display: block;
+  color: #94a3b8;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+/* =================================
+   EMPTY STATE
+================================= */
+
+.leaderboard-empty {
+  text-align: center;
+  padding: 45px 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 700px) {
+  .leaderboard-page {
+    padding-top: 25px;
+  }
+
+  .leaderboard-heading h1 {
+    font-size: 26px;
+  }
+
+  .leaderboard-card {
+    padding: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .leaderboard-tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .leaderboard-tabs button {
+    width: 100%;
+  }
+
+  .ranking-row {
+    gap: 9px;
+    padding: 12px 8px;
+  }
+
+  .ranking-position {
+    width: 24px;
+  }
+
+  .ranking-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .ranking-student h3 {
+    font-size: 12px;
+  }
+
+  .ranking-student p,
+  .ranking-student span {
+    font-size: 11px;
+  }
+
+  .ranking-marks strong {
+    font-size: 17px;
+  }
+}

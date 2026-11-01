@@ -1,89 +1,140 @@
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: #f5f7fb;
-  color: #172033;
-}
+/* =================================
+   GLOBAL LAYOUT
+================================= */
 
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
 .navbar {
-  height: 72px;
-  padding: 0 8%;
-  background: white;
+  min-height: 68px;
+  padding: 0 max(4%, calc((100% - 1200px) / 2));
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e8ebf1;
+  gap: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #304bc5;
-  font-size: 21px;
+  color: #2563eb;
+  font-size: 19px;
   font-weight: 750;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links button {
+  border: none;
+  background: transparent;
+  padding: 9px 14px;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 7px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links button:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.nav-links button.active {
+  background: #eff6ff;
+  color: #2563eb;
 }
 
 .year-badge {
-  background: #edf0ff;
-  color: #304bc5;
-  padding: 8px 16px;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 7px 13px;
   border-radius: 20px;
+  font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
-.container {
-  width: min(900px, 90%);
-  margin: auto;
-}
+/* =================================
+   HOMEPAGE HERO
+================================= */
 
 .hero {
   text-align: center;
-  padding: 75px 0 35px;
+  padding: 76px 0 35px;
 }
 
 .eyebrow {
-  color: #5269d8;
-  font-size: 12px;
-  letter-spacing: 2px;
-  font-weight: 800;
+  display: inline-block;
+  color: #2563eb;
+  font-size: 11px;
+  letter-spacing: 1.7px;
+  font-weight: 750;
 }
 
 .hero h1 {
   font-size: clamp(30px, 5vw, 44px);
-  margin: 15px 0;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  color: #0f172a;
+  margin: 16px 0;
 }
 
 .hero p {
-  color: #6b7280;
-  line-height: 1.6;
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 15px;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .search-box {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: white;
-  border: 1px solid #dce1ec;
-  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
   padding: 8px 16px;
   margin: 28px auto 10px;
-  max-width: 650px;
-  height: 62px;
-  box-shadow: 0 5px 20px #15254d0a;
+  max-width: 620px;
+  height: 58px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .search-box svg {
-  color: #64748b;
+  color: #94a3b8;
   flex-shrink: 0;
 }
 
@@ -92,206 +143,437 @@ body {
   min-width: 0;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 15px;
   background: transparent;
+  color: #1e293b;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
 }
 
 .search-box button {
   border: none;
   background: transparent;
-  color: #5269d8;
+  color: #2563eb;
   cursor: pointer;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .hero small {
-  color: #9299a8;
+  color: #94a3b8;
+  font-size: 12px;
 }
+
+/* =================================
+   HOMEPAGE STATISTICS
+================================= */
 
 .stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 16px;
   margin: 30px 0 55px;
 }
 
 .stat-card {
   display: flex;
   align-items: center;
-  gap: 18px;
-  background: white;
-  border: 1px solid #e8ebf1;
-  border-radius: 14px;
-  padding: 22px;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  padding: 20px;
 }
 
 .stat-card svg {
-  color: #5269d8;
-  width: 30px;
-  height: 30px;
+  color: #2563eb;
+  width: 26px;
+  height: 26px;
 }
 
 .stat-card h2 {
-  font-size: 26px;
+  font-size: 25px;
+  color: #0f172a;
   margin: 0;
 }
 
 .stat-card p {
-  color: #737d90;
+  color: #64748b;
+  font-size: 13px;
   margin: 5px 0 0;
 }
 
+/* =================================
+   SEARCH RESULTS
+================================= */
+
 .results-section > h2 {
-  font-size: 23px;
+  font-size: 21px;
+  color: #0f172a;
   margin-bottom: 22px;
 }
 
 .empty-state {
-  background: white;
-  border: 1px dashed #d4dbea;
-  border-radius: 14px;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
   text-align: center;
   padding: 45px 15px;
-  color: #7b8495;
+  color: #94a3b8;
 }
 
 .empty-state h3 {
-  color: #273248;
-  margin-bottom: 8px;
+  color: #334155;
+  margin: 12px 0 8px;
+  font-size: 17px;
 }
 
-.result-list {
-  display: grid;
-  gap: 18px;
-}
-
-.result-card {
-  background: white;
-  border: 1px solid #e8ebf1;
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 4px 15px #15254d08;
-}
-
-.student-info {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  background: #edf0ff;
-  color: #5269d8;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 21px;
-  font-weight: 750;
-}
-
-.student-info h3,
-.course-info h4 {
-  margin: 0 0 6px;
-}
-
-.student-info p,
-.course-info p {
-  margin: 3px 0;
-  color: #7b8495;
+.empty-state p {
   font-size: 13px;
+  margin: 0;
 }
 
-.course-info {
-  margin: 22px 0;
-  padding: 16px 0;
-  border-top: 1px solid #edf0f5;
-  border-bottom: 1px solid #edf0f5;
-}
-
-.marks-grid {
+.result-list,
+.student-results {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 20px;
 }
 
-.marks-grid div {
-  background: #f7f8fc;
-  padding: 14px;
-  border-radius: 9px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.result-card,
+.student-profile {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px;
 }
 
-.marks-grid span {
-  color: #81899a;
-  font-size: 12px;
-}
+/* =================================
+   STUDENT PROFILE
+================================= */
 
-.marks-grid strong {
-  font-size: 19px;
-}
-
-.result-footer {
+.profile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.status {
-  padding: 6px 13px;
-  border-radius: 20px;
-  font-size: 12px;
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
-.pass {
-  background: #e6f7ed;
-  color: #16834a;
+.profile-identity h3 {
+  margin: 0 0 7px;
+  font-size: 18px;
+  color: #0f172a;
 }
 
-.fail {
-  background: #fff0ef;
-  color: #d3443d;
-}
-
-.semester {
-  color: #8991a0;
+.profile-identity p {
+  margin: 4px 0;
+  color: #64748b;
   font-size: 13px;
 }
 
+.profile-identity strong {
+  color: #334155;
+}
+
+.profile-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =================================
+   PERFORMANCE SUMMARY
+================================= */
+
+.performance-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.performance-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  padding: 14px;
+  border-radius: 9px;
+  min-width: 0;
+}
+
+.performance-item > svg {
+  width: 21px;
+  height: 21px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.performance-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.performance-item span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.performance-item strong {
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.performance-item .pass-icon {
+  color: #16a34a;
+}
+
+.performance-item .fail-icon {
+  color: #dc2626;
+}
+
+/* =================================
+   COURSE RESULTS TABLE
+================================= */
+
+.course-results h4 {
+  font-size: 15px;
+  color: #0f172a;
+  margin: 0 0 15px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.student-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 700px;
+}
+
+.student-result-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 650;
+  padding: 13px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.student-result-table td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #475569;
+}
+
+.student-result-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.student-result-table td:first-child {
+  min-width: 180px;
+}
+
+.student-result-table td:first-child strong {
+  display: block;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.student-result-table td:first-child small {
+  display: block;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+/* =================================
+   MARKS PROGRESS
+================================= */
+
+.marks-progress {
+  width: 90px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.marks-progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+.student-result-table td:nth-child(5) small {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* =================================
+   RESULT STATUS
+================================= */
+
+.status-badge,
+.status {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-badge.pass,
+.pass {
+  background: #ecfdf5;
+  color: #15803d;
+}
+
+.status-badge.fail,
+.fail {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.status-badge.other {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* =================================
+   PROFILE FOOTER
+================================= */
+
+.profile-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 15px;
+  margin-top: 5px;
+  border-top: 1px solid #e5e7eb;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =================================
+   MESSAGES AND FOOTER
+================================= */
+
 .result-count,
 .message {
-  color: #737d90;
+  color: #64748b;
   margin-top: 20px;
+  font-size: 13px;
 }
 
 .error {
-  color: #d3443d;
+  color: #dc2626;
 }
 
 footer {
   text-align: center;
-  padding: 35px 10px;
-  color: #8991a0;
-  font-size: 13px;
+  padding: 28px 10px;
+  color: #94a3b8;
+  font-size: 12px;
   margin-top: 50px;
+  border-top: 1px solid #e5e7eb;
 }
 
-@media (max-width: 600px) {
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+  .performance-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
   .navbar {
-    padding: 0 5%;
+    padding: 12px 4%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 8px;
+  }
+
+  .nav-links button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .year-badge {
+    font-size: 12px;
+    padding: 6px 11px;
   }
 
   .hero {
     padding-top: 50px;
   }
 
+  .hero h1 {
+    letter-spacing: -0.8px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
   .stats {
     gap: 10px;
+    margin-bottom: 40px;
   }
 
   .stat-card {
@@ -299,8 +581,56 @@ footer {
     gap: 10px;
   }
 
+  .stat-card svg {
+    width: 22px;
+    height: 22px;
+  }
+
   .stat-card h2 {
     font-size: 21px;
+  }
+
+  .stat-card p {
+    font-size: 12px;
+  }
+
+  .student-profile {
+    padding: 16px;
+  }
+
+  .profile-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-identity h3 {
+    font-size: 16px;
+  }
+
+  .performance-summary {
+    gap: 9px;
+  }
+
+  .performance-item {
+    padding: 11px;
+    gap: 8px;
+  }
+
+  .performance-item strong {
+    font-size: 16px;
+  }
+
+  .performance-item span {
+    font-size: 11px;
+  }
+
+  .profile-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .result-card {
+    padding: 16px;
   }
 
   .marks-grid {
@@ -313,5 +643,19 @@ footer {
 
   .marks-grid strong {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .performance-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links button {
+    padding: 8px;
   }
 }
